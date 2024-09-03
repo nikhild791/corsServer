@@ -7,10 +7,9 @@ const port = process.env.PORT || 8000;
 app.use(cors())
 
 app.get('/',(req,res)=>{
+    console.log()
     res.json({
-        hostname: req.hostname,
-        ip:req.ip,
-        socket:req.socket.remoteAddress,
+        origin:req.headers.origin,
         msg : "Hello world we are hitting /"
     })
 })
